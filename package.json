@@ -20,10 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "client-s3-deploy": "aws s3 sync build/  s3://clothing-store-app-by-akaash",
-    "client-cloudfront-invalidation": "aws cloudfront create-invalidation --distribution-id E3IL6XJTENMVW9 --paths '/*'",
-    "deploy": "npm run client-s3-deploy && npm run client-cloudfront-invalidation"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
