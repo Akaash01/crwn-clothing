@@ -15,6 +15,7 @@ pipelines:
           image: node:latest
           script:
             - npm install
+            - unset CI
             - npm run build
           artifacts:
             - build/**
