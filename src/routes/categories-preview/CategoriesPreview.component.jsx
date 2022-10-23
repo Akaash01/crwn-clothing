@@ -1,5 +1,3 @@
-import { useContext } from 'react';
-import { setCategoriesMap } from '../../store/categories/category.action';
 import CategoryPreview from '../../components/category-preview/CategoryPreview.component';
 import { useSelector } from 'react-redux';
 import { selectCategoriesMap } from '../../store/categories/category.selector';
