@@ -1,11 +1,10 @@
-import { useState, useContext } from 'react';
+import { useState } from 'react';
 import {
   createAuthUserWithEmailAndPassword,
   createUserDocumentFromAuth,
   signInWithGooglePopup,
   signInAuthUserWithEmailAndPassword
 } from '../../utilities/firebase/firebase.util';
-import { UserContext } from '../../context/user.context';
 import FormInput from '../form-input/form-input.component';
 import './sign-in-form.style.scss';
 import Button, { BUTTON_TYPE_CLASS } from '../button/button.component';
