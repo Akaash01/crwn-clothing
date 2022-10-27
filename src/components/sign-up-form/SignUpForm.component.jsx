@@ -6,6 +6,9 @@ import {
 import FormInput from '../form-input/form-input.component';
 import './sign-up-form.style.scss';
 import Button from '../button/button.component';
+import { useDispatch } from 'react-redux';
+import { signUpStart } from '../../store/user/user.action';
+
 const defaultFormFields = {
   displayName: '',
   email: '',
@@ -17,6 +20,7 @@ const SignUpForm = () => {
   const [formFields, setFormFields] = useState(defaultFormFields);
   const { displayName, email, password, conformPassword } = formFields;
   console.log(formFields);
+  const dispatch = useDispatch();
   const handleChange = (event) => {
     const { name, value } = event.target;
     setFormFields({ ...formFields, [name]: value });
@@ -32,11 +36,7 @@ const SignUpForm = () => {
       return;
     }
     try {
-      const { user } = await createAuthUserWithEmailAndPassword(
-        email,
-        password
-      );
-      await createUserDocumentFromAuth(user, { displayName: displayName });
+      dispatch(signUpStart(email, password, displayName));
       resetForm();
     } catch (error) {
       console.log('user creation error', error);
